@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: AnnotationsTransformer
+metadata:
+  name: remove-annotations
+annotations: {}
+fieldSpecs:
+- kind: CustomResourceDefinition
+  path: metadata/annotations
+  create: false
