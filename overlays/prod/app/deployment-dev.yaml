@@ -6,15 +6,15 @@ metadata:
   labels:
     app: "true"
 spec:
-  replicas: 2 # Update the replica count to 3
+  replicas: 2 
   template:
     spec:
       containers:
         - name: nginx
           resources:
             limits:
-              cpu: "550m" # Lower CPU limit to 200m (0.2 CPU cores)
-              memory: "256Mi" # Lower memory limit to 256 MiB
+              cpu: "550m" 
+              memory: "256Mi" 
             requests:
-              cpu: "200m" # Lower CPU request to 100m (0.1 CPU cores)
+              cpu: "200m" 
               memory: "246Mi"
