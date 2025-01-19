@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base/argocd/
+  - argocd-project-2.yaml
+  - argocd-project-3.yaml
+  
+
+patches:
+  - target:
+      kind: ConfigMap
+      name: argocd-cmd-params-cm
+    path: configmap-patch.yaml
+  - target:
+      kind: AppProject
+      name: default
+    path: appproject-default-patch.yaml
+  - target:
+      kind: ClusterRole
+      name: argocd-applicationset-controller
+    path: clusterRole-argocd-applicationset-controller-patch.yaml
+  - target:
+      kind: CLusterRole
+      name: argocd-server
+    path: clusterRole-argocd-server-patch.yaml
+  

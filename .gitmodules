@@ -1,0 +1,6 @@
+[submodule "patches"]
+	path = patches
+	url = git@github.com:vkazmin1/apps.git
+[submodule "overlays/dev/app/patches"]
+	path = overlays/dev/app/patches
+	url = git@github.com:vkazmin1/apps.git

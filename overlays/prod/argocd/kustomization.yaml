@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base/argocd/
+  - argocd-project-2.yaml
+  - argocd-project-3.yaml
+
+patches:
+  - target:
+      kind: ConfigMap
+      name: argocd-cmd-params-cm
+    path: configmap-patch.yaml
+  - target:
+      kind: AppProject
+      name: default
+    path: appproject-default-patch.yaml
+      
+commonLabels:
+  environment: prod
+  client: A
+  

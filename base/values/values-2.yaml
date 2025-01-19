@@ -1,0 +1,3 @@
+image:
+  # If unset use v + .Charts.appVersion
+  tag: "my-tag"
